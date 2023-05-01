@@ -1,0 +1,28 @@
+<%- include("header") -%>
+    <div class="box" id="heading">
+        <h1><%= listTitle %></h1>
+    </div>  
+<!--for loop is used to add new list data every time data is entered by user-->
+    <div class="box">
+        
+            <% for (var i=0; i<newListItems.length; i++) { %> <!--ejs Scriplet tag is used here-->
+                <div class="item">
+                    <input type="checkbox">
+                    <p> <%= newListItems[i] %></p>
+                </div>     
+            <% } %>
+
+                <!-- (step 3) here data entered by the user is stored in variable "newItem" in input name
+                and a post request is made to home route-->
+   
+
+            <form class="item" action="/" method="post">
+                <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+                <button type="submit" name="list" value="<%= listTitle %>">+</button>
+            </form>
+        
+    </div>
+
+<%- include("footer") -%>
+
+
